@@ -1,0 +1,34 @@
+<div class="example-container mat-elevation-z8">
+  <a routerLink="/customer/new" style="margin: 5px;" mat-button type="primary">New Customer</a>
+  <mat-table #table [dataSource]="results$">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef> Adress </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actionsColumn">
+      <mat-header-cell *matHeaderCellDef> * </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button (click)="edit(row)">Edit</button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

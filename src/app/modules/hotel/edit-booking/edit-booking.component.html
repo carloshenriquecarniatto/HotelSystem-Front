@@ -1,0 +1,20 @@
+<form [formGroup]="editBookingForm"
+  style="margin-top: 1rem;display: flex; flex-direction: column; max-width: 50%; gap: 2rem;">
+  <label>
+    Address:
+    <input type="text" [formControl]="editBookingForm.controls.address">
+  </label>
+  <label>
+    Hotel Id:
+    <input type="text" [formControl]="editBookingForm.controls.hotelId">
+  </label>
+  <label>
+    Customer Id:
+    <input type="text" [formControl]="editBookingForm.controls.customerId">
+  </label>
+  <label>
+    Name:
+    <input type="text" [formControl]="editBookingForm.controls.name">
+  </label>
+  <button type="button" (click)="save()">Salvar</button>
+</form>
